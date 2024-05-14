@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="principal">   
+        <form action="funcion.php" method="post" class="formulario_registro">
+            <div class="formulario_registro_encabezado">
+                <ul class="progresbar">
+                    <li class="progresbar_opcion active">Paso 1</li>
+                    <li class="progresbar_opcion">Paso 2</li>
+                    <li class="progresbar_opcion">Paso 3</li>
+                </ul>
+                <h1>Formulario de Registro</h1>
+            </div>
+            <div class="formulario_registro_cuerpo">
+                <div class="paso active" id="paso-1">
+                    <div class="paso_encabezado">
+                        <h2 class="paso_titulo"> Información de cuenta <small>(Paso 1)</small> </h2>
+                    </div>
+                    <div class="paso_cuerpo">
+                        <input type="email" name="correo" placeholder="Ingrese correo" class="paso_input">
+                        <input type="password" name="contrasenia" placeholder="Ingrese contraseña" class="paso_input">
+                        <input type="password" name="contrasenia2" placeholder="Repita la contraseña" class="paso_input">
+                    </div>
+                    <div class="paso_fin">
+                        <button type="button" class="paso_boton paso_boton--siguiente" data-step="1" data-to_step="2">Siguiente</button>
+                    </div>
+                </div>
+                <div class="paso" id="paso-2">
+                    <div class="paso_encabezado">
+                        <h2 class="paso_titulo"> Información personal <small>(Paso 2)</small> </h2>
+                    </div>
+                    <div class="paso_cuerpo">
+                        <input type="text" name="nombre" placeholder="Ingrese Nombre" class="paso_input">
+                        <input type="text" name="apellido" placeholder="Ingrese Apellido" class="paso_input">
+                        <input type="tel" name="telefono" placeholder="Ingrese Telefono" class="paso_input">
+                        <textarea name="direccion" cols="80" rows="4" placeholder="Ingrese su direccion" class="paso_input"></textarea>
+                    </div>
+                    <div class="paso_fin">
+                        <button type="button" class="paso_boton paso_boton--regresa" data-step="2" data-to_step="1">Regresar</button>
+                        <button type="button" class="paso_boton paso_boton--siguiente" data-step="2" data-to_step="3">Siguiente</button>
+                    </div>
+                </div>
+                <div class="paso" id="paso-3">
+                    <div class="paso_encabezado">
+                        <h2 class="paso_titulo"> Información adicional <small>(Paso 3)</small> </h2>
+                    </div>
+                    <div class="paso_cuerpo">
+                        <input type="text" name="adicional1" placeholder="Ingrese adicional" class="paso_input">
+                        <input type="text" name="adicional2" placeholder="Ingrese adicional" class="paso_input">
+                        <input type="text" name="adicional3" placeholder="Ingrese adicional" class="paso_input">
+                    </div>
+                    <div class="paso_fin">
+                        <button type="button" class="paso_boton paso_boton--regresa" data-step="3" data-to_step="2">Regresar</button>
+                        <button type="submit" name="registrar" class="paso_boton">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="back-to-top">Back to Top</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

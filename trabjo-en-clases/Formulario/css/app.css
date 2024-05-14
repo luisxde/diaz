@@ -1,0 +1,177 @@
+*, *:before, *:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-1: #008080;
+    --color-bg-2: #FEF9E7;
+    --color-btn: #2196f3;
+    --color-paso_encabezado: orange;
+    --color-shadow: #222;
+    --color-border-input: #ddd;
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-image:linear-gradient(var(--color-bg-1),var(--color-bg-2));
+    overflow: hidden;
+}
+
+.formulario_registro{
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.progresbar{
+    display: flex;
+    list-style: none;
+    margin-bottom: 15px;
+    counter-reset: paso;
+}
+
+.progresbar_opcion{
+    width: 100%;
+    text-align: center;
+    font-size: .7em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.progresbar_opcion:before{
+    display: flex;
+    content: counter(paso);
+    counter-increment: paso;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    margin: 0 auto 5px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.progresbar_opcion::after{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: -50%;
+    z-index: 1;
+}
+
+.progresbar_opcion:first-child::after{
+    content: none;
+}
+
+.progresbar_opcion.active::before, .progresbar_opcion::after{
+    background-color: var(--color-paso_encabezado);
+}
+
+.formulario_registro_encabezado{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.formulario_registro_cuerpo{
+    display: flex;
+    align-items: flex-start;
+}
+
+.paso{
+    background-color: white;
+    box-shadow: 5px 5px 5px 2px var(--color-shadow);
+    border-radius: 3px;
+    min-width: 100%;
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.paso.active{
+    opacity: 1;
+}
+
+.paso.to-left {
+    margin-left: -100%;
+}
+
+.paso.inactive {
+    animation-name: scale;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+
+@keyframes scale {
+    from{
+        transform: scale(1);
+    } to{
+        transform: scale(1.1);
+    }
+}
+
+.paso_encabezado{
+    padding: 20px 15px;
+    background-color: var(--color-paso_encabezado);
+    border-radius: 3px 3px 0 0;
+}
+
+.paso_titulo{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.paso_cuerpo{
+    padding: 20px 15px 0;
+}
+
+.paso_input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-input);
+}
+.paso_fin{
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.paso_boton{
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--color-btn);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: none;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: 1px solid #007bff; 
+    border-radius: 5px; 
+}
+
+.back-to-top.show {
+    display: block;
+}
